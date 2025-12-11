@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayFlow - The Easiest Way to Accept Payments</title>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.10/tailwindcss.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style type="text/tailwindcss" data-teda="tailwind-apply">
+        @layer components {
+            .btn-primary { @apply bg-emerald-600 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-emerald-200 hover:shadow-xl hover:bg-emerald-700 transition-all transform hover:-translate-y-1; }
+            .btn-secondary { @apply bg-white text-slate-900 px-8 py-4 rounded-full font-bold border border-slate-200 hover:bg-slate-50 transition-all; }
+        }
+    </style>
+</head>
+<body class="bg-white overflow-x-hidden">
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-slate-900 font-bold text-xl">
+                <div class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                PayFlow
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#features" class="hover:text-emerald-600 transition-colors">Features</a>
+                <a href="#how-it-works" class="hover:text-emerald-600 transition-colors">How it works</a>
+                <a href="app.html" class="text-slate-900 hover:text-emerald-600 transition-colors">Log in</a>
+                <a href="app.html" class="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition-all">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-40 pb-20 lg:pt-52 lg:pb-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-[60%] space-y-8 animate-slide-up">
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
+                        Get paid <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-400">instantly</span> without code.
+                    </h1>
+                    <p class="text-xl text-slate-500 leading-relaxed max-w-2xl">
+                        Create beautiful payment links in seconds. Sell digital products, services, or consultations. No website required.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="app.html" class="btn-primary text-center">Create Payment Link</a>
+                        <a href="#how-it-works" class="btn-secondary text-center">View Demo</a>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-slate-400 pt-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white"></div>
+                        </div>
+                        <p>Trusted by 10,000+ creators</p>
+                    </div>
+                </div>
+                
+                <div class="lg:w-[40%] relative">
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-20 -right-20 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-teal-400/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+                    
+                    <!-- Hero Image / UI Mockup -->
+                    <div class="relative bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 animate-float transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                    <span class="font-bold text-slate-400">J</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-slate-900">Joe's Design Course</div>
+                                    <div class="text-xs text-slate-400">Digital Product</div>
+                                </div>
+                            </div>
+                            <div class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded-full">$49.00</div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-2 bg-slate-100 rounded w-full"></div>
+                            <div class="h-2 bg-slate-100 rounded w-3/4"></div>
+                            <div class="h-2 bg-slate-100 rounded w-5/6"></div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Pay Now</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Notification -->
+                    <div class="absolute -bottom-12 -left-12 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 animate-float" style="animation-delay: 2s">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Just now</div>
+                            <div class="font-bold text-slate-900">+$49.00 received</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 max-w-2xl">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Everything you need to sell online.</h2>
+                <p class="text-slate-500 text-lg">Focus on your product. We handle the checkout experience.</p>
+            </div>
+
+            <div class="space-y-24">
+                <!-- Feature 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-12 reveal-on-scroll">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                                    <span class="text-slate-600 font-medium">Consultation Call</span>
+                                    <span class="font-bold">$150.00</span>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                                    <span class="text-slate-600 font-medium">E-Book Bundle</span>
+                                    <span class="font-bold">$29.00</span>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-emerald-50 border border-emerald-100 rounded-xl">
+                                    <span class="text-emerald-700 font-medium">Monthly Retainer</span>
+                                    <span class="font-bold text-emerald-700">$2,000.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Create unlimited links</h3>
+                        <p class="text-slate-500 text-lg leading-relaxed">Whether you are selling a single file or a recurring service, create a unique payment link for each offering in seconds. Customize prices, currencies, and images.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="flex flex-col md:flex-row items-center gap-12 reveal-on-scroll">
+                    <div class="md:w-1/2">
+                        <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">AI-Powered Descriptions</h3>
+                        <p class="text-slate-500 text-lg leading-relaxed">Stuck on what to write? Our built-in AI helps you generate persuasive product descriptions instantly, so you can launch faster and convert more customers.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-slate-900 rounded-3xl p-8 shadow-xl text-white relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl"></div>
+                            <div class="relative z-10">
+                                <div class="text-xs font-mono text-emerald-400 mb-2">> AI Generating...</div>
+                                <div class="text-lg font-medium leading-relaxed opacity-90">"Master the art of digital marketing with this comprehensive guide. Learn proven strategies to scale your business today."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how-it-works" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Start selling in 3 steps</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                    <div class="text-6xl font-black text-slate-200 mb-6">01</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Create Account</h3>
+                    <p class="text-slate-500">Sign up for free and set up your business profile in seconds.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                    <div class="text-6xl font-black text-slate-200 mb-6">02</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Generate Link</h3>
+                    <p class="text-slate-500">Add product details, price, and let AI write the description.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                    <div class="text-6xl font-black text-emerald-100 mb-6">03</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Get Paid</h3>
+                    <p class="text-slate-500">Share the link anywhere. Customers pay, you get notified instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto bg-slate-900 rounded-[2.5rem] p-12 lg:p-20 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDQwaDQwVjBIMHY0MHptMjAtMjBoMnYyaC0ydi0yem0wLTJoMnYyaC0ydi0yem0wLTJoMnYyaC0ydi0yem0wLTJoMnYyaC0ydi0yeiIgZmlsbD0iIzMzMyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L2c+PC9zdmc+')] opacity-20"></div>
+            <div class="relative z-10">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Ready to start accepting payments?</h2>
+                <p class="text-slate-400 text-xl mb-10 max-w-2xl mx-auto">Join thousands of creators and businesses using PayFlow to monetize their work.</p>
+                <a href="app.html" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-5 px-10 rounded-full text-lg shadow-xl shadow-emerald-900/50 transition-all transform hover:-translate-y-1">
+                    Create Your First Link Free
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4 font-bold text-slate-900 text-lg">
+                <div class="w-6 h-6 bg-emerald-600 rounded flex items-center justify-center text-white">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                PayFlow
+            </div>
+            <p class="text-slate-500 text-sm">
+                &copy; <span id="year"></span> PayFlow. Built by <a href="https://teda.dev" class="text-emerald-600 hover:underline">Teda.dev</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        $(function() {
+            $('#year').text(new Date().getFullYear());
+            
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            $('.reveal-on-scroll').each(function() {
+                observer.observe(this);
+            });
+        });
+    </script>
+  <script src="scripts/helpers.js"></script>
+  <script src="scripts/data.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

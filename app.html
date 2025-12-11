@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayFlow - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.10/tailwindcss.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 h-screen overflow-hidden flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col z-20">
+        <div class="p-6">
+            <a href="index.html" class="flex items-center gap-2 text-slate-900 font-bold text-xl mb-8">
+                <div class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                PayFlow
+            </a>
+            
+            <nav class="space-y-1">
+                <button data-nav="dashboard" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl bg-emerald-50 text-emerald-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    Dashboard
+                </button>
+                <button data-nav="create" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-slate-600 hover:bg-slate-50 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    Create Link
+                </button>
+                <button data-nav="links" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-slate-600 hover:bg-slate-50 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    My Links
+                </button>
+                <button data-nav="settings" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-slate-600 hover:bg-slate-50 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Settings
+                </button>
+            </nav>
+        </div>
+        
+        <div class="mt-auto p-6 border-t border-slate-200">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold">JD</div>
+                <div>
+                    <div class="text-sm font-bold text-slate-900">John Doe</div>
+                    <div class="text-xs text-slate-500">Business Account</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Nav Header -->
+    <div class="md:hidden fixed top-0 w-full bg-white border-b border-slate-200 z-30 px-4 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-slate-900 font-bold text-lg">
+            <div class="w-6 h-6 bg-emerald-600 rounded flex items-center justify-center text-white">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            PayFlow
+        </a>
+        <button class="text-slate-500" onclick="$('.mobile-menu').toggleClass('hidden')">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu hidden fixed inset-0 bg-white z-40 pt-20 px-6 space-y-4 md:hidden">
+        <button data-nav="dashboard" class="w-full text-left py-3 text-lg font-medium border-b border-slate-100" onclick="$('.mobile-menu').addClass('hidden')">Dashboard</button>
+        <button data-nav="create" class="w-full text-left py-3 text-lg font-medium border-b border-slate-100" onclick="$('.mobile-menu').addClass('hidden')">Create Link</button>
+        <button data-nav="links" class="w-full text-left py-3 text-lg font-medium border-b border-slate-100" onclick="$('.mobile-menu').addClass('hidden')">My Links</button>
+        <button data-nav="settings" class="w-full text-left py-3 text-lg font-medium" onclick="$('.mobile-menu').addClass('hidden')">Settings</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto p-6 md:p-12 pt-20 md:pt-12">
+        <div id="main-content" class="max-w-5xl mx-auto">
+            <!-- Dynamic Content Injected Here -->
+            <div class="animate-pulse space-y-8">
+                <div class="h-8 bg-slate-200 rounded w-1/3"></div>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="h-32 bg-slate-200 rounded-2xl"></div>
+                    <div class="h-32 bg-slate-200 rounded-2xl"></div>
+                    <div class="h-32 bg-slate-200 rounded-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="scripts/helpers.js"></script>
+    <script src="scripts/ai.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/main.js"></script>
+
+</body>
+</html>
